@@ -68,8 +68,9 @@ Initialize Git (if not already):
 git init
 ```
 
-```bash
 Add remote:
+
+```bash
 git remote add origin https://github.com/<your-username>/<your-repo>.git
 ```
 
