@@ -1,61 +1,94 @@
-# 🚀 Getting started with Strapi
+# Strapi Local Setup — Task Documentation
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This README documents all the steps followed to clone the Strapi repository, run it locally, create a sample content type, and push the setup to a personal GitHub repository.
 
-### `develop`
+## Clone the Strapi Repository
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
-
+```bash
+git clone https://github.com/strapi/strapi
 ```
-npm run develop
-# or
+
+## Move into the project directory:
+
+```bash
+cd strapi
+```
+
+## Install Dependencies
+
+Strapi uses Yarn, so install all dependencies with:
+
+```bash
+yarn install
+```
+
+## Run Strapi Locally
+
+Start the development server:
+
+```bash
 yarn develop
 ```
 
-### `start`
+This will:
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+Build the admin panel and Start Strapi on: http://localhost:8080/admin
 
+## Start the Admin Panel
+
+Once the server is started, open: http://localhost:8080/admin
+
+You will be prompted to create the first admin user.
+
+## Create a Sample Content Type
+
+Go to Content-Type Builder in the admin panel.
+
+Click Create new collection type.
+
+- Name it (example): demo
+
+Add fields such as:
+
+- title
+
+- content
+
+- published
+
+Save and let Strapi restart.
+
+Go to Content Manager and create an entry.
+
+## Push the Setup to Your GitHub Repository
+
+Initialize Git (if not already):
+
+```bash
+git init
 ```
-npm run start
-# or
-yarn start
+
+```bash
+Add remote:
+git remote add origin https://github.com/<your-username>/<your-repo>.git
 ```
 
-### `build`
+Add all files:
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
+```bash
+git add .
 ```
 
-## ⚙️ Deployment
+Commit:
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
+```bash
+git commit -m "Initial Strapi setup"
 ```
 
-## 📚 Learn more
+Push:
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+```bash
+git push -u origin main
+```
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Replace `<your-username>` and `<your-repo>` with your actual GitHub username and repository name.
